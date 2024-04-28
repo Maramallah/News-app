@@ -1,8 +1,10 @@
 import 'package:api/model/articales.dart';
+import 'package:api/screen/cinemaScreen.dart';
+import 'package:api/screen/politicsScreen.dart';
+import 'package:api/screen/sportsScreen.dart';
 import 'package:api/services/articels.dart';
 import 'package:api/widgets/newstypes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 class Homepage extends StatefulWidget {
@@ -12,9 +14,9 @@ class Homepage extends StatefulWidget {
   @override
   State<Homepage> createState() => _HomepageState();
 }
-List<MyWidget> widgetlist =[ const MyWidget(title: 'Sports', image: 'assets/images/images.jpeg',),
-         const MyWidget(title: 'Cinema', image: 'assets/images/download (1).jpeg',),
-          const MyWidget(title: 'Politics', image: 'assets/images/images (1).jpeg',)];
+List<MyWidget> widgetlist =[ const MyWidget(title: 'Sports', image: 'assets/images/images.jpeg', screen: Sports(),),
+         const MyWidget(title: 'Cinema', image: 'assets/images/download (1).jpeg', screen: Cinema(),),
+          const MyWidget(title: 'Politics', image: 'assets/images/images (1).jpeg',screen: Politics(),)];
 
 class _HomepageState extends State<Homepage> {
  
@@ -31,6 +33,7 @@ List<article> articles = [];
     });
     print("Articles fetched: ${articles.length}"); 
   }
+  @override
   Widget build(BuildContext context) {
     return  Scaffold(
      appBar: AppBar(
@@ -72,6 +75,7 @@ List<article> articles = [];
                 },
             ),
                  ),
+     
                 
             Expanded(
             child: ListView.builder(
@@ -85,7 +89,7 @@ List<article> articles = [];
           return Container(
             width: 500,
            
-            padding: EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(5.0),
             child:  Column(
               children: [
                 Container(
@@ -99,7 +103,7 @@ List<article> articles = [];
             ),
           ),
                 ),
-                Text(title , style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold , color: Colors.black),),
+                Text(title , style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold , color: Colors.black),),
                
             ],
             ),
@@ -116,7 +120,7 @@ List<article> articles = [];
         },
             ),
           ),
-          SizedBox(height: 10,)
+          const SizedBox(height: 10,)
                   ],
                  
                 

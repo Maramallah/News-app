@@ -2,32 +2,29 @@ import 'package:api/model/articales.dart';
 import 'package:flutter/material.dart';
 
 class newsshow extends StatelessWidget {
-  final article articlee;
-  const newsshow({super.key, required this.articlee});
+  final List<article> articles;
+  
+  const newsshow({super.key, required this.articles});
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-       width: 200.0,  // Specify the width of the container
-          height: 300.0,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-
-    ),
-    child: Column(
-      children: [
-        
-        Text(articlee.title,  style: const TextStyle(
-                fontSize: 17,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),),
-              Text(articlee.descreption,style: const TextStyle(
-                fontSize: 13,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,) )
-      ],
-    ),
+    return  Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListView.builder
+      (itemCount: articles.length,
+        itemBuilder: (context, index) {
+            final article = articles[index];
+             final title = article.title;
+             final descreption =article.descreption;
+            //final imageurl =article.image;
+          return ListTile(
+            title: Text(title),
+            subtitle: Text(descreption),
+          );  
+         }
+         
+      ),
     );
+     }
   }
-  }
+
