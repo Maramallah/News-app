@@ -44,7 +44,7 @@ class MyWidget extends StatelessWidget {
                   textAlign: TextAlign.center, // Adjust text alignment as needed
                   style: TextStyle(
                     fontSize: 24,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 245, 239, 239),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
