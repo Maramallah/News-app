@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class CinemaArticle {
   static Future<List<article>> fetchCinema() async {
-    const url = 'https://newsapi.org/v2/top-headlines?country=eg&category=entertainment&apiKey=b71bc27e43db4c7ab45133315c1c5dba';
+    const url = 'https://newsapi.org/v2/top-headlines?country=jp&category=entertainment&apiKey=b71bc27e43db4c7ab45133315c1c5dba';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
 

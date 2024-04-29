@@ -29,9 +29,30 @@ class _PoliticsState extends State<Politics> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Busniss News "),
+       title: RichText(
+          text: const TextSpan(
+            children: [
+              TextSpan(
+                text: 'ビジネス',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: 'ニュース',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 9, 120, 211),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
         centerTitle: true,
-      ),
+        ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

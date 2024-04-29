@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MyWidget extends StatelessWidget {
   final String title;
@@ -36,8 +37,11 @@ class MyWidget extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text(
+                child: AutoSizeText(
                   title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center, // Adjust text alignment as needed
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.white,

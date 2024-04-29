@@ -28,10 +28,31 @@ class _SportsState extends State<Sports> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sports News "),
+      appBar:AppBar(
+       title: RichText(
+          text: const TextSpan(
+            children: [
+              TextSpan(
+                text: 'スポーツ',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                text: 'ニュース',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 5, 229, 31),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
         centerTitle: true,
-      ),
+        ),
       body: Column(
         children: [
           newsshow(articles: Sarticles,)
